@@ -22,7 +22,7 @@ class View {
     highlight() {
         let colID = document.getElementsByClassName("bin");
         for (let i = 0; i < colID.length; i++) {
-            (colID[i].innerHTML !== "0" && colID[i].innerHTML !== "\u0020")
+            (colID[i].innerHTML !== "0" && colID[i].innerHTML !== "\u2001")
                 ? colID[i].style.backgroundColor = 'lightgreen'
                 : colID[i].style.backgroundColor = 'transparent';
         }
