@@ -10,15 +10,19 @@ class RomanConverter {
         let romArr = [];
         let year88 = 0;
 
-        //additional cols when year = 88
-        (parseInt(dec[dec.length - 1]) === 88)
-            ? year88 = 2
-            : year88 = 1;
+
         //concat ones and tens
         for (let i = 0; i < dec.length; i++) {
             ten[i] = Math.floor(dec[i] / 10);
             one[i] = dec[i] % 10;
-            romArr[i] = (tens[ten[i]] + ones[one[i]]);
+            if (parseInt(dec[dec.length - 1]) === 88) {
+                year88 = 2
+                romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u0020\u0020\u0020\u0020\u0020\u0020\u0020").slice(0, 8);
+            } else {
+                year88 = 1;
+                romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u0020\u0020\u0020\u0020\u0020\u0020").slice(0, 7);
+            }
+
         }
 
         return new HtmlTable().create(romArr, dec, year88, colName);
