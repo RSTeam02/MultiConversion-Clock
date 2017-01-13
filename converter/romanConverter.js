@@ -1,7 +1,7 @@
 class RomanConverter {
 
     convert(dec) {
-        let colName = ["1", "2", "4", "5", "6", "7", "8", "9"];
+        let colName = ["1", "2", "3", "4", "5", "6", "7", "8"];
         let ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
         let tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
         let ten = [];
