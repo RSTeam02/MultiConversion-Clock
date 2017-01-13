@@ -2,13 +2,16 @@ class HtmlTable {
 
     create(numArr, dec, addCol, firstRow) {
         let str = "";
-        str += "<tr>";
-        for (let i = numArr.length + addCol; i >= 0; i--) {
-            (i === numArr.length + addCol)
-                ? str += `<th id="btmRight"></th>`
-                : str += `<th id="bottom">${firstRow[i]}</th>`;
+
+        if (firstRow !== undefined) {
+            str += "<tr>";
+            for (let i = numArr.length + addCol; i >= 0; i--) {
+                (i === numArr.length + addCol)
+                    ? str += `<th id="btmRight"></th>`
+                    : str += `<th id="bottom">${firstRow[i]}</th>`;
+            }
+            str += "</tr>";
         }
-        str += "</tr>";
         //rows for binary numbers of each time unit
         for (let i = 0; i < numArr.length; i++) {
             str += "<tr>";

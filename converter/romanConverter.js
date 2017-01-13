@@ -1,7 +1,7 @@
 class RomanConverter {
 
     convert(dec) {
-        let colName = ["1", "2", "3", "4", "5", "6", "7", "8"];
+        
         //roman numerals 0 - 99
         let ones = ["\u0020", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
         let tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
@@ -9,7 +9,6 @@ class RomanConverter {
         let one = [];
         let romArr = [];
         let year88 = 0;
-
 
         //concat ones and tens
         for (let i = 0; i < dec.length; i++) {
@@ -25,7 +24,7 @@ class RomanConverter {
 
         }
 
-        return new HtmlTable().create(romArr, dec, year88, colName);
+        return new HtmlTable().create(romArr, dec, year88, undefined);
 
     }
 }
