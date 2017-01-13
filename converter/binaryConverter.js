@@ -1,6 +1,7 @@
 class BinaryConverter {
 
     convert(dec) {
+        //powers of 2
         let utfExp = ["2\u2070", "2\u00B9", "2\u00B2", "2\u00B3", "2\u2074", "2\u2075", "2\u2076"];
         let binArr = [];
         let year64 = 0;

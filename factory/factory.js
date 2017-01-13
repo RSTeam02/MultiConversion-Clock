@@ -1,5 +1,5 @@
 class Factory {
-
+    //dependent on selected conversion mode via radiobutton
     execConvert(mode) {
         switch (mode) {
             case "bin":

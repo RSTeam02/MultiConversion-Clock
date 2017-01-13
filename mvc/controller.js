@@ -61,7 +61,7 @@ class Controller {
             this.view.invisDec();
         }
     }
-
+    //call Strategy-Factory
     updateDisplay() {
         let h24 = document.getElementById("24h").checked;
         for (let i = 0; i < this.classRbConv.length; i++) {
