@@ -8,23 +8,15 @@ class RomanConverter {
         let ten = [];
         let one = [];
         let romArr = [];
-        let year88 = 0;
 
         //concat ones and tens
         for (let i = 0; i < dec.length; i++) {
             ten[i] = Math.floor(dec[i] / 10);
             one[i] = dec[i] % 10;
-            if (parseInt(dec[dec.length - 1]) === 88) {
-                year88 = 2
-                romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u2001\u2001\u2001\u2001\u2001\u2001\u2001").slice(0, 8);
-            } else {
-                year88 = 1;
-                romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u2001\u2001\u2001\u2001\u2001\u2001").slice(0, 7);
-            }
-
+            (parseInt(dec[dec.length - 1]) === 88)
+                ? romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u2001\u2001\u2001\u2001\u2001\u2001\u2001").slice(0, 8)
+                : romArr[i] = ((tens[ten[i]] + ones[one[i]]) + "\u2001\u2001\u2001\u2001\u2001\u2001").slice(0, 7);
         }
-
-        return new HtmlTable().create(romArr, dec, year88, undefined);
-
+        return new HtmlTable().create(romArr, dec, undefined, undefined);
     }
 }
