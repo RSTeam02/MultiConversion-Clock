@@ -1,5 +1,5 @@
 class RomanConverter {
-
+    
     convert(dec) {
         let colName = ["1", "2", "3", "4", "5", "6", "7", "8"];
         let ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
@@ -8,7 +8,8 @@ class RomanConverter {
         let one = [];
         let romArr = [];
         let year88 = 0;
-
+                
+        //add col when year = 88
         (parseInt(dec[dec.length - 1]) === 88)
             ? year88 = 2
             : year88 = 1;
