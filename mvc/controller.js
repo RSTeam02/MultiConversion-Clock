@@ -66,9 +66,9 @@ class Controller {
         let h24 = document.getElementById("24h").checked;
         for (let i = 0; i < this.classRbConv.length; i++) {
             if (document.getElementById(this.classRbConv[i].id).checked) {
-                let table = new ConvertStrategy(new Factory().execConvert(this.classRbConv[i].id));
+                let strategy = new ConvertStrategy(new Factory().execConvert(this.classRbConv[i].id));
                 document.getElementById("setTitle").innerHTML = document.getElementById(this.classRbConv[i].id).value;
-                this.view.domView(table.convert(new Clock().timeDate(h24)));
+                this.view.domView(strategy.start(new Clock().timeDate(h24)));
             }
         }
         this.settings();

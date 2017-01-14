@@ -4,7 +4,7 @@ class ConvertStrategy {
         this.strategy = strategy;
     }
 
-    convert(seq) {
+    start(seq) {
         return this.strategy.convert(seq);
     }
 }
