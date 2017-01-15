@@ -1,12 +1,14 @@
 class HtmlTable {
 
-    create(numArr, dec, addCol, firstRow) {
+    create(numArr, dec, firstRow) {
         let str = "";
 
         if (firstRow !== undefined) {
+            //dependent on number of digits, adjust first row 
+            let addCol = numArr[numArr.length - 1].length - firstRow.length;
             str += "<tr>";
-            for (let i = numArr.length + addCol; i >= 0; i--) {
-                (i === numArr.length + addCol)
+            for (let i = firstRow.length + addCol; i >= 0; i--) {
+                (i === firstRow.length + addCol)
                     ? str += `<th id="btmRight"></th>`
                     : str += `<th id="bottom">${firstRow[i]}</th>`;
             }
